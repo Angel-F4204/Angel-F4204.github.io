@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Angel Flores Jr. — Software Developer</title>
+  <meta name="description" content="Angel Flores Jr. — Computer Science student at Hunter College and web development intern. Projects in React, TypeScript, Python, and C++.">
+  <meta property="og:title" content="Angel Flores Jr. — Software Developer">
+  <meta property="og:description" content="Full-stack projects, internship work, and CS fundamentals.">
+  <meta property="og:image" content="assets/img/gb-map.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2322d3ee'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='%23081018'>AF</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">Angel Flores Jr.</a>
+      <nav aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero wrap" id="top">
+      <div class="hero-text">
+        <p class="eyebrow">Software Developer · Queens, NY</p>
+        <h1>Hi, I'm Angel. I build web apps people actually use.</h1>
+        <p class="lead">
+          Computer Science student at <strong>Hunter College (CUNY)</strong> and
+          Software / Web Development Intern at <strong>Sports Media Inc.</strong>, where I help build the
+          <strong>Fanz</strong> sports platform in React and Supabase. I like turning everyday problems,
+          like finding cheap gas, into apps that are fast, clean, and easy to use.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">See my work</a>
+          <a class="btn" href="https://github.com/Angel-F4204" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="mailto:af1174610@gmail.com">Email me</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <!-- To use your own photo: add assets/img/headshot.jpg and replace the div below with
+             <img src="assets/img/headshot.jpg" alt="Angel Flores Jr."> -->
+        <div class="avatar" role="img" aria-label="Angel Flores Jr.">AF</div>
+        <ul class="quick">
+          <li><span>Stack</span>React · TypeScript · Python</li>
+          <li><span>Now</span>Intern @ Sports Media Inc.</li>
+          <li><span>Speaks</span>English · Spanish</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section wrap" id="projects">
+      <div class="section-head">
+        <p class="eyebrow">Selected work</p>
+        <h2>Five projects I'm proud of</h2>
+      </div>
+
+      <!-- 1. GassyBot -->
+      <article class="project">
+        <div class="media phones">
+          <img src="assets/img/gb-home.jpg" alt="GassyBot home screen showing the cheapest regular gas nearby at $4.20" data-zoom>
+          <img src="assets/img/gb-map.jpg" alt="GassyBot map of nearby gas stations in Queens with a sorted price list" data-zoom>
+        </div>
+        <div class="body">
+          <div class="title-row">
+            <img class="logo" src="assets/img/gassybot-icon.png" alt="" width="40" height="40">
+            <div>
+              <p class="kicker">01 · Personal project</p>
+              <h3>GassyBot</h3>
+            </div>
+          </div>
+          <p class="tagline">Find the cheapest gas around you, from Discord or your phone's home screen.</p>
+          <p>
+            Started as a Discord bot that posts state gas prices on a schedule, then grew into an installable
+            phone app. It finds your location, pulls real station prices from Google Places, and ranks the
+            20 closest stations by price for regular, midgrade, premium, or diesel.
+          </p>
+          <ul class="did">
+            <li>Built a Flask API (<code>/api/nearby</code>, <code>/api/search</code>) on top of the Google Places API, with zip code and town search</li>
+            <li>Made it an installable <strong>PWA</strong> with a service worker, a manifest, and an interactive map</li>
+            <li>Added optional Firebase login so favorite stations sync across devices</li>
+            <li>Discord commands (<code>!gas</code>, <code>!setlocation</code>) with hourly updates and an EIA data fallback</li>
+            <li>Deployed 24/7 on <strong>Railway</strong></li>
+          </ul>
+          <ul class="chips"><li>Python</li><li>Flask</li><li>discord.py</li><li>Google Places API</li><li>Firebase</li><li>PWA</li><li>Railway</li></ul>
+          <div class="links">
+            <a href="https://github.com/Angel-F4204/GassyBot" target="_blank" rel="noopener">View code →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Fanz -->
+      <article class="project">
+        <div class="media fanz" aria-hidden="true">
+          <div class="fanz-card">
+            <div class="fanz-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="fanz-logo">FANZ</div>
+            <p>Sports media platform</p>
+            <div class="fanz-rows">
+              <div><b>React</b> UI from Figma designs</div>
+              <div><b>Supabase</b> auth and real-time data</div>
+              <div><b>Follow / unfollow</b> social graph</div>
+              <div><b>CRM</b> and automated email sequences</div>
+            </div>
+          </div>
+        </div>
+        <div class="body">
+          <p class="kicker">02 · Professional · Sports Media Inc. · Mar 2025 – Present</p>
+          <h3>Fanz</h3>
+          <p class="tagline">Shipping features on a real product with a real team.</p>
+          <p>
+            As a Software / Web Development Intern, I work on the Fanz sports media web app. I take features
+            from a Figma design to merged code, working in an Agile team through GitHub pull requests,
+            code reviews, and Slack.
+          </p>
+          <ul class="did">
+            <li>Turned Figma designs into responsive, pixel-accurate React components</li>
+            <li>Connected <strong>Supabase</strong> for login, real-time database updates, and follow / unfollow</li>
+            <li>Tracked down tricky state and logic bugs across Git branches to make the platform more stable</li>
+            <li>Built CRM integrations and automated email sequences for lead generation and user engagement</li>
+          </ul>
+          <ul class="chips"><li>React</li><li>Supabase</li><li>Figma</li><li>Git / GitHub</li><li>Agile</li></ul>
+          <p class="note">The codebase is private, so there are no screenshots here.</p>
+        </div>
+      </article>
+
+      <!-- 3. GameVault -->
+      <article class="project">
+        <div class="media stack">
+          <img src="assets/img/gv-home.jpg" alt="GameVault catalog of games with status and rating" data-zoom>
+          <img src="assets/img/gv-item.jpg" alt="GameVault detail page for Elden Ring with status, rating, and notes" data-zoom>
+        </div>
+        <div class="body">
+          <p class="kicker">03 · Hunter College · Practical Web Development</p>
+          <h3>GameVault</h3>
+          <p class="tagline">A personal video game tracker: want, playing, done, dropped.</p>
+          <p>
+            A React and TypeScript single-page app for organizing a game backlog. Browse a catalog, search by title,
+            filter by status, and open any game to rate it and save notes. Everything stays in sync with a REST backend.
+          </p>
+          <ul class="did">
+            <li>Server state with <strong>TanStack Query</strong> (fetching, caching, mutations) and UI state with <strong>Zustand</strong></li>
+            <li>Client-side routing with React Router, including detail, status-list, and 404 pages</li>
+            <li>Light / dark theme and compact / comfortable density, both saved across reloads</li>
+            <li>Styled with Tailwind CSS and fully typed with TypeScript</li>
+          </ul>
+          <ul class="chips"><li>React</li><li>TypeScript</li><li>TanStack Query</li><li>Zustand</li><li>Tailwind CSS</li><li>Vite</li></ul>
+          <div class="links">
+            <a href="https://github.com/Angel-F4204/assignment-4-myshelf" target="_blank" rel="noopener">View code →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. cosPlanner -->
+      <article class="project">
+        <div class="media stack">
+          <img src="assets/img/cos-plan.jpg" alt="cosPlanner garment planning page with pattern pieces and a fabric grid measured in inches" data-zoom>
+          <img src="assets/img/cos-home.jpg" alt="cosPlanner projects dashboard listing cosplay suits" data-zoom>
+        </div>
+        <div class="body">
+          <p class="kicker">04 · Team project · Full-stack</p>
+          <h3>cosPlanner</h3>
+          <p class="tagline">Plan a cosplay build from fabric to finish.</p>
+          <p>
+            A full-stack planner for cosplayers. Each costume is a project with its own fabric planner, materials
+            inventory, and checklist. The garment planner lays pattern pieces on a grid scaled to the real
+            fabric width, so you can see how much material you need before you cut.
+          </p>
+          <ul class="did">
+            <li>Built the frontend: the project system, the fabric grid, and draggable pattern pieces</li>
+            <li>Built backend routes, controllers, and services for Projects on <strong>Express</strong></li>
+            <li>Designed the database flow with the <strong>Drizzle ORM</strong> on MySQL, with <strong>Zod</strong> validation</li>
+            <li>Firebase authentication, with a feature-branch Git workflow shared with a teammate</li>
+          </ul>
+          <ul class="chips"><li>React</li><li>Node.js</li><li>Express</li><li>Drizzle ORM</li><li>MySQL</li><li>Firebase Auth</li></ul>
+          <div class="links">
+            <a href="https://github.com/KeebCode/cosPlanner" target="_blank" rel="noopener">View code →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. C++ -->
+      <article class="project">
+        <div class="media terminal" role="img" aria-label="Terminal output of the flight network vertex cover program">
+          <div class="term-bar"><span></span><span></span><span></span><em>vertex_cover</em></div>
+<pre><span class="p">$</span> ./vertex_cover *_flights.txt
+<u># airports · routes → airports to staff</u>
+small   <b>10</b> · <b>14</b>     → <i>5</i>    <u>0.008 ms</u>
+medium  <b>100</b> · <b>633</b>   → <i>76</i>   <u>0.12 ms</u>
+large   <b>500</b> · <b>8,160</b> → <i>434</i>  <u>1.6 ms</u>
+<span class="p">$</span> <span class="cursor"></span></pre>
+        </div>
+        <div class="body">
+          <p class="kicker">05 · Hunter College · Data Structures (C++)</p>
+          <h3>Algorithms in C++</h3>
+          <p class="tagline">Three projects about picking the right data structure for the job.</p>
+          <p>
+            Projects from my data structures course, written in modern C++17. The flight network project turns
+            more than 16,000 flight records into a graph and finds which airports need staff so every route is
+            covered. That's the vertex cover problem, solved here with a greedy highest-degree heuristic.
+          </p>
+          <ul class="did">
+            <li><strong>Flight network graph:</strong> parses flight logs into an adjacency-set graph and runs a greedy vertex cover; the largest dataset takes under 2 ms</li>
+            <li><strong>Leaderboard rankings:</strong> quickselect with Hoare partitioning, heap sort, and streaming top-k ranking of incoming players</li>
+            <li><strong>Game inventory:</strong> compared a custom AVL tree with a hash set for item lookup, equipping, and range queries</li>
+          </ul>
+          <ul class="chips"><li>C++17</li><li>Graphs</li><li>AVL Trees</li><li>Hashing</li><li>Heaps</li><li>Quickselect</li></ul>
+          <p class="note">This is coursework, so the source is private. I'm happy to walk through it in an interview.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section wrap about" id="about">
+      <div class="section-head">
+        <p class="eyebrow">About me</p>
+        <h2>A little more about me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a Computer Science student at Hunter College, born and raised in Queens. I like building
+            things I'd use myself, like GassyBot, which finds the cheapest gas near me.
+          </p>
+          <p>
+            Before tech, I spent two years at <strong>MUJI Hudson Yards</strong> as a Keyholder. I opened and closed the store,
+            ran daily staff meetings, handled cash, and helped manage the <em>MUJI IS: Behind the 'Wa-ke'</em> exhibition.
+            I even kept Jarvis, the store's robot barista, running. That job taught me how to lead a team and stay calm
+            when things get busy, and I bring both to every engineering team I join.
+          </p>
+          <p>
+            I'm fluent in English and Spanish. I've also coached youth flag football with the Forest Hills Youth Athletic Association.
+          </p>
+        </div>
+        <div class="skills">
+          <h3>Skills</h3>
+          <div class="skill-group"><span>Languages</span><ul class="chips"><li>JavaScript</li><li>TypeScript</li><li>Python</li><li>Java</li><li>C++</li><li>C</li><li>HTML / CSS</li><li>SQL</li></ul></div>
+          <div class="skill-group"><span>Frontend</span><ul class="chips"><li>React</li><li>React Router</li><li>TanStack Query</li><li>Zustand</li><li>Tailwind CSS</li><li>Vite</li></ul></div>
+          <div class="skill-group"><span>Backend &amp; Data</span><ul class="chips"><li>Node.js</li><li>Express</li><li>Flask</li><li>Supabase</li><li>Firebase</li><li>MySQL</li><li>Drizzle ORM</li></ul></div>
+          <div class="skill-group"><span>Tools</span><ul class="chips"><li>Git / GitHub</li><li>Figma</li><li>Railway</li><li>REST APIs</li><li>Agile</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section wrap" id="experience">
+      <div class="section-head">
+        <p class="eyebrow">Experience</p>
+        <h2>Where I've worked</h2>
+      </div>
+      <ol class="timeline">
+        <li>
+          <div class="when">Mar 2025 – Present</div>
+          <div><h3>Software / Web Development Intern</h3><p class="org">Sports Media Inc.</p>
+          <p>Build and maintain the Fanz web app in React and Supabase, turn Figma designs into components, and ship through PR reviews in an Agile team.</p></div>
+        </li>
+        <li>
+          <div class="when">Jan 2023 – Mar 2025</div>
+          <div><h3>Keyholder &amp; Sales Associate</h3><p class="org">MUJI Hudson Yards</p>
+          <p>Ran store operations, led staff meetings, and handled cash balancing and deposits. Part-time manager of a featured in-store exhibition.</p></div>
+        </li>
+        <li>
+          <div class="when">Fall 2021</div>
+          <div><h3>Youth Flag Football Coach</h3><p class="org">Forest Hills Youth Athletic Association</p>
+          <p>Co-coached a team of ten players aged 13 to 15, running weekly practices and keeping parents and coaches informed.</p></div>
+        </li>
+        <li>
+          <div class="when">In progress</div>
+          <div><h3>B.A. Computer Science</h3><p class="org">Hunter College, City University of New York</p></div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section wrap contact" id="contact">
+      <h2>Let's build something.</h2>
+      <p>I'm looking for software engineering roles and internships. The fastest way to reach me is email.</p>
+      <div class="cta center">
+        <a class="btn primary" href="mailto:af1174610@gmail.com">af1174610@gmail.com</a>
+        <a class="btn" href="https://github.com/Angel-F4204" target="_blank" rel="noopener">github.com/Angel-F4204</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot">© <span id="year">2026</span> Angel Flores Jr.</footer>
+
+  <dialog id="zoom" aria-label="Enlarged screenshot"><img alt=""><button type="button" aria-label="Close">×</button></dialog>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const dlg = document.getElementById('zoom'), big = dlg.querySelector('img');
+    document.querySelectorAll('[data-zoom]').forEach(img => {
+      img.tabIndex = 0;
+      const open = () => { big.src = img.src; big.alt = img.alt; dlg.showModal(); };
+      img.addEventListener('click', open);
+      img.addEventListener('keydown', e => { if (e.key === 'Enter') open(); });
+    });
+    dlg.addEventListener('click', () => dlg.close());
+  </script>
+</body>
+</html>
