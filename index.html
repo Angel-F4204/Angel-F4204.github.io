@@ -308,15 +308,24 @@ large   <b>500</b> · <b>8,160</b> → <i>434</i>  <u>1.6 ms</u>
       img.addEventListener('keydown', e => { if (e.key === 'Enter') open(); });
     });
     dlg.addEventListener('click', () => dlg.close());
-    // Fade each section in as it scrolls into view
-    const targets = document.querySelectorAll('.hero-text, .hero-photo, .section-head, .project, .about-text, .skills, .timeline li, .contact');
-    document.querySelectorAll('.timeline li').forEach((li, i) => li.style.setProperty('--delay', (i * 0.08) + 's'));
-    document.querySelector('.hero-photo')?.style.setProperty('--delay', '.15s');
-    document.querySelector('.skills')?.style.setProperty('--delay', '.12s');
+    // Fade in every piece of text and every picture as it scrolls into view (and replay on the way back)
+    const pieces = '.eyebrow, h1, .lead, .cta, .avatar, .hero-photo > img, .quick li, h2, .kicker, .title-row, .project h3, .tagline, .body > p, .did li, .chips, .links, .media img, .fanz-card, .terminal, .about-text p, .skills h3, .skill-group, .timeline li, .contact > p, .foot';
+    const found = [...document.querySelectorAll(pieces)];
+    // Skip anything inside another piece so nothing fades twice
+    const targets = found.filter(el => !found.some(o => o !== el && o.contains(el)));
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        let i = 0;
+        entries.forEach(e => {
+          if (e.isIntersecting && e.intersectionRatio >= 0.15) {
+            e.target.style.setProperty('--delay', Math.min(i++ * 0.09, 0.6) + 's');
+            e.target.classList.add('in');
+          } else if (!e.isIntersecting) {
+            e.target.style.setProperty('--delay', '0s');
+            e.target.classList.remove('in');
+          }
+        });
+      }, { threshold: [0, 0.15] });
       targets.forEach(el => { el.classList.add('reveal'); io.observe(el); });
     }
   </script>

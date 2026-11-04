@@ -214,14 +214,17 @@ dialog button { position: absolute; top: 8px; right: 8px; width: 40px; height: 4
   .btn { transition: none; }
 }
 
-/* Scroll reveal: only active when JS has run (html.js), so content never stays hidden without JS */
+/* Scroll reveal: every text block and picture fades up on its own. Only active once JS runs (html.js). */
 .js .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+  transform: translateY(24px);
+  transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1);
   transition-delay: var(--delay, 0s);
 }
 .js .reveal.in { opacity: 1; transform: none; }
+/* keep the offset phone screenshot's own nudge */
+.js .phones img.reveal:last-child { transform: translateY(52px); }
+.js .phones img.reveal.in:last-child { transform: translateY(28px); }
 @media (prefers-reduced-motion: reduce) {
-  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .js .reveal, .js .phones img.reveal:last-child { opacity: 1; transform: none; transition: none; }
 }
