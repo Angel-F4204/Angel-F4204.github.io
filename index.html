@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <script>document.documentElement.classList.add("js")</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Angel Flores Jr. — Software Developer</title>
   <meta name="description" content="Angel Flores Jr. — Computer Science student at Hunter College and web development intern. Projects in React, TypeScript, Python, and C++.">
@@ -307,6 +308,17 @@ large   <b>500</b> · <b>8,160</b> → <i>434</i>  <u>1.6 ms</u>
       img.addEventListener('keydown', e => { if (e.key === 'Enter') open(); });
     });
     dlg.addEventListener('click', () => dlg.close());
+    // Fade each section in as it scrolls into view
+    const targets = document.querySelectorAll('.hero-text, .hero-photo, .section-head, .project, .about-text, .skills, .timeline li, .contact');
+    document.querySelectorAll('.timeline li').forEach((li, i) => li.style.setProperty('--delay', (i * 0.08) + 's'));
+    document.querySelector('.hero-photo')?.style.setProperty('--delay', '.15s');
+    document.querySelector('.skills')?.style.setProperty('--delay', '.12s');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      targets.forEach(el => { el.classList.add('reveal'); io.observe(el); });
+    }
   </script>
 </body>
 </html>
