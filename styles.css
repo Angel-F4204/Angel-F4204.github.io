@@ -117,6 +117,7 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.15; margin: 0; letter-s
 .chips li { font-size: 13px; font-weight: 500; padding: 4px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--text); }
 .links { margin-top: 20px; }
 .links a { font-weight: 600; text-decoration: none; }
+.links a + a { margin-left: 22px; }
 .links a:hover { text-decoration: underline; }
 .note { font-size: 14px; color: var(--muted); margin-top: 16px !important; font-style: italic; }
 

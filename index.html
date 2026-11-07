@@ -70,8 +70,8 @@
       <!-- 1. GassyBot -->
       <article class="project">
         <div class="media phones">
-          <img src="assets/img/gb-home.jpg" alt="GassyBot home screen showing the cheapest regular gas nearby at $4.20" data-zoom>
-          <img src="assets/img/gb-map.jpg" alt="GassyBot map of nearby gas stations in Queens with a sorted price list" data-zoom>
+          <img src="assets/img/gb-home.jpg" alt="GassyBot home screen in an iOS style, showing the cheapest regular gas nearby at $3.84 with a Directions button" data-zoom>
+          <img src="assets/img/gb-map.jpg" alt="GassyBot map of New York gas stations above a list sorted by price, cheapest first" data-zoom>
         </div>
         <div class="body">
           <div class="title-row">
@@ -81,23 +81,25 @@
               <h3>GassyBot</h3>
             </div>
           </div>
-          <p class="tagline">Find the cheapest gas around you, from Discord or your phone's home screen.</p>
+          <p class="tagline">Find the cheapest gas around you, from an app on your phone's home screen.</p>
           <p>
-            Started as a Discord bot that posts state gas prices on a schedule, then grew into an installable
-            phone app. It finds your location, pulls real station prices from Google Places, and ranks the
-            20 closest stations by price for regular, midgrade, premium, or diesel.
+            Started as a Discord bot that posts gas prices, then grew into an installable phone app designed
+            to look and feel like a native iPhone app. It finds your location, pulls real station prices from
+            Google Places, and ranks nearby stations by price for regular, midgrade, premium, or diesel.
           </p>
           <ul class="did">
-            <li>Built a Flask API (<code>/api/nearby</code>, <code>/api/search</code>) on top of the Google Places API, with zip code and town search</li>
-            <li>Made it an installable <strong>PWA</strong> with a service worker, a manifest, and an interactive map</li>
-            <li>Added optional Firebase login so favorite stations sync across devices</li>
-            <li>Discord commands (<code>!gas</code>, <code>!setlocation</code>) with hourly updates and an EIA data fallback</li>
-            <li>Deployed 24/7 on <strong>Railway</strong></li>
+            <li>Built a Flask API (<code>/api/nearby</code>, <code>/api/search</code>) on top of the Google Places API, with caching and a daily request cap to keep API costs at zero</li>
+            <li>Designed the interface after Apple's iOS guidelines: large titles, grouped lists, a segmented fuel picker, and a translucent tab bar</li>
+            <li>Made it an installable <strong>PWA</strong>: a service worker opens it instantly and shows your last prices even offline</li>
+            <li>Interactive Leaflet map, saved stations, and optional Firebase login for syncing across devices</li>
+            <li>Deployed on <strong>Render</strong> with automatic deploys from GitHub</li>
           </ul>
-          <ul class="chips"><li>Python</li><li>Flask</li><li>discord.py</li><li>Google Places API</li><li>Firebase</li><li>PWA</li><li>Railway</li></ul>
+          <ul class="chips"><li>Python</li><li>Flask</li><li>JavaScript</li><li>Google Places API</li><li>Leaflet</li><li>PWA</li><li>Firebase</li><li>discord.py</li></ul>
           <div class="links">
+            <a href="https://gassybot.onrender.com" target="_blank" rel="noopener">Try it live →</a>
             <a href="https://github.com/Angel-F4204/GassyBot" target="_blank" rel="noopener">View code →</a>
           </div>
+          <p class="note">Runs on a free server, so the first visit after a while can take up to a minute to wake up.</p>
         </div>
       </article>
 
@@ -249,7 +251,7 @@ large   <b>500</b> · <b>8,160</b> → <i>434</i>  <u>1.6 ms</u>
           <div class="skill-group"><span>Languages</span><ul class="chips"><li>JavaScript</li><li>TypeScript</li><li>Python</li><li>Java</li><li>C++</li><li>C</li><li>HTML / CSS</li><li>SQL</li></ul></div>
           <div class="skill-group"><span>Frontend</span><ul class="chips"><li>React</li><li>React Router</li><li>TanStack Query</li><li>Zustand</li><li>Tailwind CSS</li><li>Vite</li></ul></div>
           <div class="skill-group"><span>Backend &amp; Data</span><ul class="chips"><li>Node.js</li><li>Express</li><li>Flask</li><li>Supabase</li><li>Firebase</li><li>MySQL</li><li>Drizzle ORM</li></ul></div>
-          <div class="skill-group"><span>Tools</span><ul class="chips"><li>Git / GitHub</li><li>Figma</li><li>Railway</li><li>REST APIs</li><li>Agile</li></ul></div>
+          <div class="skill-group"><span>Tools</span><ul class="chips"><li>Git / GitHub</li><li>Figma</li><li>Render</li><li>REST APIs</li><li>Agile</li></ul></div>
         </div>
       </div>
     </section>
